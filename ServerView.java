@@ -213,3 +213,39 @@ public class ServerView {
             }
         }
     }
+
+    /**
+     * Initialize the contents of the frame.
+     */
+    private void initialize() { //here components of Swing App UI are initilized
+        frame = new JFrame();
+        frame.setBounds(100, 100, 796, 530);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().setLayout(null);
+        frame.setTitle("Server View");
+
+        serverMessageBoard = new JTextArea();
+        serverMessageBoard.setEditable(false);
+        serverMessageBoard.setBounds(12, 29, 489, 435);
+        frame.getContentPane().add(serverMessageBoard);
+        serverMessageBoard.setText("Starting the Server...\n");
+
+        allUserNameList = new JList();
+        allUserNameList.setBounds(526, 324, 218, 140);
+        frame.getContentPane().add(allUserNameList);
+
+        activeClientList = new JList();
+        activeClientList.setBounds(526, 78, 218, 156);
+        frame.getContentPane().add(activeClientList);
+
+        JLabel lblNewLabel = new JLabel("All Usernames");
+        lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
+        lblNewLabel.setBounds(530, 295, 127, 16);
+        frame.getContentPane().add(lblNewLabel);
+
+        JLabel lblNewLabel_1 = new JLabel("Active Users");
+        lblNewLabel_1.setBounds(526, 53, 98, 23);
+        frame.getContentPane().add(lblNewLabel_1);
+
+    }
+}
